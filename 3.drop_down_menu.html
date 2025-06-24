@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        nav {
+            background-color: red;
+            color:white;
+        }
+        nav ul {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            padding: 3rem;
+        }
+        nav ul a {
+            text-decoration: none;
+            color:white;
+        }
+        nav ul li {
+            list-style-type: none;
+            text-transform: uppercase;
+            text-align: center;
+        }
+        @media screen and (max-width:800px) {
+                nav ul {
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    grid-template-rows: repeat(6, 1fr);
+                    padding: 0rem 3rem;
+                    display: none;
+                }
+                nav ul.active{
+                    display: block;
+                }
+                nav ul li { 
+                    padding: 1rem 0;
+                    text-align: left;
+                }
+                #menubutton{
+                    background-image: url("https://www.link-academy.com/images/crte.png");
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    width: 30px;
+                    aspect-ratio: 1/1;
+                }
+        }
+
+    </style>
+</head>
+<body>
+    <nav>
+        <div id="menubutton" onclick="toggle_menu()"></div>
+        
+        <ul >
+            <a href="">
+                <li>Inscriere</li>
+            </a>
+            <a href="">
+                <li>Programe</li>
+            </a>
+            <a href="">
+                <li>E-learning</li>
+            </a>
+            <a href="">
+                <li>Ce obtineti</li>
+            </a>
+            <a href="">
+                <li>Diplome</li>
+            </a>
+            <a href="">
+                <li>Despre Link</li>
+            </a>
+        </ul>
+    </nav>
+    <script>
+        var is_closed = true;
+        var nav_ul = document.querySelector("nav>ul")
+        function toggle_menu() {
+            is_closed = !is_closed;
+            if (is_closed === false) {
+                nav_ul.className = "active"
+            } else {
+                nav_ul.className = ""
+            }
+            
+        }
+    </script>
+</body>
+</html>

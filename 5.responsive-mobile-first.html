@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    body{
+        min-height: 100vh;
+    }
+    main {
+        display: grid;
+        height: 100%;
+    }
+    #hero{
+        background-image: url("hero.jpeg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        
+
+        min-height: 50vh;
+    }
+    @media screen and (min-width: 850px) {
+        main {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        #hero {
+            grid-row: 1/span 2;
+        }
+    }
+
+    @media screen and (min-width: 1000px) { 
+        main {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        #hero {
+            grid-column: 2/span 1;
+        }
+
+    }
+ 
+    </style>
+</head>
+<body>
+
+    <main>
+
+        <section id="hero">
+        </section>
+
+        <section id="firstsection">
+            <h2>Photoshop</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum, hic!</p>
+            <h2>Illustrator</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum, hic!</p>
+            <h2>Figma</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum, hic!</p>
+        </section>
+
+        
+        
+        
+        <section>
+            <h2>HTML/CSS</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum, hic!</p>
+            <h2>SEO</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum, hic!</p>
+            <h2>WordPress</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum, hic!</p>
+        </section>
+    </main>
+
+    
+</body>
+</html>
