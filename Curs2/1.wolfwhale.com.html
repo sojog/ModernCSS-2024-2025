@@ -17,21 +17,41 @@
         .header__logo__imgClip {
             position: absolute;
             left:0px;
-            transition-duration: 3s;
-            visibility: hidden;
+       
         }
-        #LinkLogo:hover .header__logo__imgClip {
-            visibility: visible;
-            transition-duration: 3s;
+         #LinkLogo  .header__logo__imgClip {
+            width: 210px;
+            height: 23px;
+            animation: hideLogo 2s ease-out forwards;
+            clip-path: inset(0 0% 0 0); 
         }
+        @keyframes hideLogo {
+            to {
+                clip-path:  inset(0 100% 0 0); ; /* dezvăluie complet */
+            }
+        }
+  
+        #LinkLogo:hover  .header__logo__imgClip {
+            width: 210px;
+            height: 23px;
+            animation: revealLogo 2s ease-out forwards;
+            clip-path: inset(0 100% 0 0); 
+            }
+
+        @keyframes revealLogo {
+            to {
+                clip-path: inset(0 0% 0 0); /* dezvăluie complet */
+            }
+        }
+
         .header__logo__imgClip #Logo{
             fill:blue;
             animation: reveal 20s linear forwards; animation-delay: 2s
         }
-        @keyframes reveal {
-            0% { stroke-dashoffset: 0; }
-            100% { stroke-dashoffset: -80; }
-        }
+       
+        
+
+
         nav {
             text-align: right;
         }
