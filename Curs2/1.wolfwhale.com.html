@@ -22,19 +22,19 @@
          #LinkLogo  .header__logo__imgClip {
             width: 210px;
             height: 23px;
-            animation: hideLogo 2s ease-out forwards;
+            animation: hideLogo 2s ease-in forwards;
             clip-path: inset(0 0% 0 0); 
         }
         @keyframes hideLogo {
             to {
-                clip-path:  inset(0 100% 0 0); ; /* dezvăluie complet */
+                clip-path:  inset(0 100% 0 0); ; /* ascunde complet */
             }
         }
   
         #LinkLogo:hover  .header__logo__imgClip {
             width: 210px;
             height: 23px;
-            animation: revealLogo 2s ease-out forwards;
+            animation: revealLogo 2s ease-in forwards;
             clip-path: inset(0 100% 0 0); 
             }
 
@@ -43,10 +43,8 @@
                 clip-path: inset(0 0% 0 0); /* dezvăluie complet */
             }
         }
-
         .header__logo__imgClip #Logo{
             fill:blue;
-            animation: reveal 20s linear forwards; animation-delay: 2s
         }
        
         
