@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        header {
+            visibility: visible;
+        }
         body.darktheme{ 
             background-color: #010014;
            
@@ -72,10 +75,17 @@
         }
         header {
             position: fixed;
-            top: 0px;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            top: 60px;
+            display: flex;
+            /* grid-template-columns: repeat(3, 1fr);
+             */
+             align-items: center;
+             justify-content: space-between;
             margin: 0 50px;
+            width: calc(100% - 100px);
+        }
+        nav {
+            display: flex;
         }
 
         header ul li {
@@ -106,6 +116,26 @@
             position: relative;
             /* overflow:hidden; */
         }
+        aside{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+     
+        }
+        /* aside  div  */
+        #sectionstatus, #locations{
+            transform: rotate(-90deg);
+            position: fixed;
+            top:50vh;
+        }
+        aside#left {
+             grid-column-start: 1;
+        }
+         aside#right {
+             grid-column-start: 3;
+        }
+            
+
         main {
             /* background-color: black; */
             min-height: 300vh;
@@ -136,7 +166,41 @@
         #theme  #lightButton:hover{
             fill:black;
         }
-       
+        #hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            padding:10rem;
+            grid-gap: 3rem;
+
+        }
+        #hero h1 {
+            font-size: 64px;
+            color:black;
+        }
+        .darktheme #hero h1 {
+            color:white;
+        }
+       #hero h1 span {
+            color:blue;
+       }
+       #hero div {
+            padding-top: 10rem;
+            font-size: 20px;
+       }
+       .darktheme #hero a {
+            color:white; 
+       }
+       #hero a {
+            color:black;
+            text-decoration: none;
+       }
+       .bgIconContainer {
+            position: fixed;
+            opacity: 0.3;
+            top:40vh;
+            left:40vw;
+            z-index: -1;
+       }
     </style>
 </head>
 <body class="darktheme">
@@ -202,7 +266,7 @@
                 <li>Ideas</li>
                 <li id="CTA">Connect With Us</li>
             </ul>
-        </nav>
+        
 
         <div id="theme">e
             <a href="javascript:;" onclick="change_theme(true)">
@@ -223,11 +287,34 @@
             </a>
 
         </div>
-
+        </nav>
 
     </header>
+
+
+    <aside id="left">
+        <div id="locations">NYC · LA · SF</div>
+    </aside>
+
+
+    <aside id="right">
+        <div id="sectionstatus">Introduction</div>
+    </aside>
+    
     <main>
-        <h1>Great design is a force of nature.</h1>
+        <div class="bgIconContainer">
+                <img src="https://www.wolfwhale.com/wp-content/themes/flinked/dist/assets/image/landing-bg-Icon.svg" alt="" class="home__main__container__bgIcon">
+           </div>
+        <section id="hero">
+                    <h1>Great <span>design</span> is a force of nature.</h1>
+                    <div>
+                        <p>Legendary brands tap into their most powerful natures and strengths. With Wolf&Whale's global expertise in design, messaging, identity, and development, we catalyze these forces, elevating your brand's impact and profitability.</p>
+                        <a href="">What we do</a>
+                        <a href="">What we think</a>
+                    </div>
+
+        </section>
+
     </main>
     <footer>
 
@@ -242,6 +329,29 @@
                 document.body.className = ""
             }
         }
+
+        var last_Y_scroll = 0
+        var header = document.querySelector("header")
+
+        function verifica_directia_scroll_ului() {
+          
+            if (last_Y_scroll - window.pageYOffset  > 0)  {
+                 header.style.visibility = "visible";
+                 last_Y_scroll = window.pageYOffset; 
+                 return;
+                 
+            }
+
+              if (window.pageYOffset - last_Y_scroll > 0) {
+                header.style.visibility = "hidden";
+                last_Y_scroll = window.pageYOffset; 
+                return;
+            } 
+        }
+
+
+        window.onscroll = verifica_directia_scroll_ului
+
 
     </script>
 
