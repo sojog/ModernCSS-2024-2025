@@ -5,8 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        body {
-            background-color: red;
+        body.darktheme{ 
+            background-color: #010014;
+           
+        }
+        .darktheme > * {
+             color:white;
+        }
+        body{
+            background-color: #F5F5F5;
+           
+        }
+        body > * {
+            color:black;
         }
         #LinkLogo{
             position: relative;
@@ -68,7 +79,6 @@
         }
 
         header ul li {
-            color:white;
             position: relative;
             text-align: center;
         }
@@ -80,7 +90,9 @@
             top:-1rem;
             right: calc(50% - 3rem);
             color:aqua;
-            background-color: gray;
+            background-color: #34334A;
+            color:white;
+            padding: 1px 3px;
         }
         #CTA {
             background-color: blue;
@@ -95,7 +107,7 @@
             /* overflow:hidden; */
         }
         main {
-            background-color: black;
+            /* background-color: black; */
             min-height: 300vh;
             grid-column-start: 2;
         }
@@ -103,10 +115,31 @@
            color: blue;
            padding-top: 3rem;
         }
+        #theme {
+            display: flex;
+        }
 
+        #theme a{
+            width: 42px;
+            height: 42px;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #theme a:first-child {
+            background-color: #2F2E45;
+        }
+        #theme a:hover {
+            background-color: blue;
+        }
+        #theme  #lightButton:hover{
+            fill:black;
+        }
+       
     </style>
 </head>
-<body>
+<body class="darktheme">
     <header>
         <a href="" id="LinkLogo">
             <svg class="header__logo__img" width="210px" height="23px" viewBox="0 0 210 23"  version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -171,6 +204,27 @@
             </ul>
         </nav>
 
+        <div id="theme">e
+            <a href="javascript:;" onclick="change_theme(true)">
+                <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M7.73844 8.72725H9.26149C9.26149 7.96657 9.8274 7.26985 10.5561 7.26985H10.9149V5.82324H10.5561C9.71314 5.82324 8.9984 6.28724 8.49997 6.88913C8.00146 6.28724 7.24028 5.82324 6.44377 5.82324H6.08496V7.26985H6.44377C7.17885 7.26985 7.73844 7.96657 7.73844 8.72725Z" fill="white"></path>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M11.8861 7.27263H15.3569C15.1695 8.43307 14.3006 9.4545 13.0877 9.4545H12.7435C11.1204 9.4545 9.95765 10.762 9.95765 12.3462V13.7659L8.50007 14.909L7.04249 13.7659V12.3462C7.04249 10.762 5.84643 9.4545 4.25679 9.4545H3.91227C2.69958 9.4545 1.83079 8.43307 1.64335 7.27263H5.11411V5.81812H0.13623V6.88318C0.13623 9.03352 1.74085 10.909 3.89125 10.909H4.25679C4.98781 10.909 5.57585 11.5713 5.57585 12.3462H5.57578V14.3999L7.43731 15.9999H9.5629L11.4244 14.3999V12.3462H11.4244C11.4244 11.5713 11.9713 10.909 12.7277 10.909H13.0932C15.2486 10.909 16.8639 9.03345 16.8639 6.88318V5.81812H11.8861V7.27263Z" fill="white"></path>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M1.59085 1.5068C2.62524 1.5068 3.64134 2.70008 3.64134 3.91253V4.84719H5.11411V3.90566H5.11397C5.11026 1.75161 3.35646 0 1.2014 0H0.13623V4.84719H1.59085V1.5068Z" fill="white"></path>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M15.7989 0C13.6439 0 11.8901 1.75161 11.8864 3.90566H11.8862V4.84719H13.359V3.91185C13.3593 2.69974 14.3751 1.5068 15.4096 1.5068V4.84719H16.864V0H15.7989Z" fill="white"></path>
+                </svg>
+            </a>
+            <a href="javascript:;" onclick="change_theme(false)">
+                <svg id="lightButton" width="17" height="14" viewBox="0 0 17 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.5874 11.4045H12.2535C12.2535 12.0702 11.7671 12.7162 11.1196 12.7162H10.3006C9.65204 12.7162 9.16672 12.0702 9.16672 11.4045H7.83282C7.83282 12.0702 7.3484 12.7162 6.69894 12.7162H5.86067C5.21409 12.7162 4.72679 12.0702 4.72679 11.4045H3.39289C3.39289 12.0702 2.8836 12.7162 2.25901 12.7162H1.83984V13.9821H2.25901C2.96953 13.9821 3.62324 13.5761 4.05984 13.0494C4.49644 13.5761 5.12277 13.9821 5.86067 13.9821H6.69894C7.42893 13.9821 8.06317 13.5761 8.49977 13.0494C8.93638 13.5761 9.57684 13.9821 10.3006 13.9821H11.1196C11.8476 13.9821 12.4838 13.5761 12.9205 13.0494C13.3571 13.5761 13.9956 13.9821 14.7212 13.9821H15.1597V12.7162H14.7212C14.0761 12.7162 13.5874 12.0702 13.5874 11.4045Z" fill="white"></path>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M7.83585 2.55314H9.16412C9.16412 1.89025 9.66467 1.27869 10.2932 1.27869H10.4029V0.0180664H10.2932C9.51839 0.0180664 8.93473 0.422406 8.49999 0.946915C8.06524 0.422406 7.4343 0.0180664 6.70677 0.0180664H6.59717V1.27869H6.70677C7.26999 1.27869 7.83585 1.89025 7.83585 2.55314Z" fill="white"></path>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M4.28257 4.46268H4.84094C5.64578 4.46268 5.99112 5.01587 5.99112 5.69115V8.27981H5.8533C5.21535 8.27981 4.72415 7.63657 4.72415 6.97368H3.396C3.396 7.63657 2.90924 8.27981 2.26686 8.27981H1.84008V9.54037H2.26686C2.97893 9.54037 3.62527 9.13609 4.06008 8.61158C4.49488 9.13609 5.15836 9.54037 5.8533 9.54037H7.27001V5.69115C7.27001 4.31066 6.28007 3.17865 4.84094 3.17865H4.30109C3.2435 3.17865 2.36621 2.29681 2.2028 1.28557H5.75364V0.0180664H0.888672V0.946197C0.888672 2.88443 2.40954 4.45269 4.28257 4.46268Z" fill="white"></path>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M11.0088 5.69115C11.0088 5.01587 11.3542 4.46268 12.1589 4.46268H12.7174C14.5904 4.45269 16.1113 2.88443 16.1113 0.946197V0.0180664H11.2463V1.28557H14.7971C14.6337 2.29681 13.7564 3.17865 12.6989 3.17865H12.1589C10.7199 3.17865 9.72998 4.31066 9.72998 5.69115V9.54037H11.1466C11.8416 9.54037 12.5051 9.13609 12.9399 8.61158C13.3747 9.13609 14.0211 9.54037 14.7331 9.54037H15.1599V8.27981H14.7331C14.0907 8.27981 13.604 7.63657 13.604 6.97368H12.2758C12.2758 7.63657 11.7845 8.27981 11.1466 8.27981H11.0088V5.69115Z" fill="white"></path>
+                </svg>
+            </a>
+
+        </div>
+
+
     </header>
     <main>
         <h1>Great design is a force of nature.</h1>
@@ -179,5 +233,18 @@
 
     </footer>
     
+    <script>
+
+        function change_theme(is_dark_theme) {
+            if (is_dark_theme === true) {
+                document.body.className = "darktheme"
+            } else {
+                document.body.className = ""
+            }
+        }
+
+    </script>
+
+
 </body>
 </html>
