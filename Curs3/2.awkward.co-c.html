@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            font-family: 'San Francisco', 'Roboto';
+        }
+
+        header,
+        #logocontainer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        header {
+            margin: 1rem;
+        }
+
+        #logocontainer {
+            gap: 3rem;
+        }
+
+        nav ol {
+            display: flex;
+            gap: 1rem;
+        }
+
+        li {
+            text-decoration: none;
+            list-style: none;
+        }
+
+        nav ol a {
+            text-decoration: none;
+            color: lightgray;
+        }
+
+        #logoicon {
+            background-image: url("https://www.awkward.co/awk.39de2b4d.png");
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            height: 56px;
+            width: 33px;
+        }
+
+        main {
+            margin: 8rem;
+            z-index: 4;
+            background-color: white;
+
+        }
+
+        main h1 {
+            margin-bottom: 4rem;
+             z-index: 7;
+            max-width: 32rem;
+        }
+
+        main li {
+            font-size: 4rem;
+            font-weight: bolder;
+            margin-top: 1rem;
+        }
+
+        main li:hover {
+            color: black;
+        }
+
+        ul:not(:hover) li {
+            color: black
+        }
+
+        main li {
+            color: gray;
+            z-index: 10;
+        }
+
+        main li:hover .preview {
+            visibility: visible;
+        }
+
+        .preview {
+            position: fixed;
+            visibility: hidden;
+            width: 50vw;
+            height: 25vh;
+            z-index: -2;
+        }
+
+        .preview * {
+            width: 100%;
+            height: 100%;
+        }
+        video {
+        width: 100%;
+        height: auto;
+        }
+        footer {
+            height: 100vh;
+            background-color: black;
+            box-sizing: content-box;
+            margin:0px;
+            z-index: -10;
+            position: relative;
+            overflow: hidden;
+        }
+        body {
+            margin:0px;
+            height: 200vh; /* Extinde pentru scroll */
+        }
+        footer section {
+            position: absolute;
+            height: 100vh;
+            width: 100%;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 2rem;
+        }
+        footer   * {
+            z-index: 0;
+        }
+        h2{
+            color:white;
+            margin: 0 8rem;
+            font-size: 3rem;
+            opacity: 0;
+            transform: translateY(100px);
+            transition: all 0.8s ease-out;
+        }
+        
+        h2.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Parallax effect prin CSS */
+        footer section {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div id="logocontainer">
+            <div id="logoicon"></div>
+            <div id="logotext">Awkward</div>
+        </div>
+
+        <nav>
+            <ol>
+                <a href="">
+                    <li>About</li>
+                </a>
+                <a href="">
+                    <li>Project</li>
+                </a>
+                <a href="">
+                    <li>Career</li>
+                </a>
+                <a href="">
+                    <li>Contact</li>
+                </a>
+            </ol>
+        </nav>
+    </header>
+    <main>
+        <h1>We partner with founders and companies to design and develop digital products</h1>
+        <ul>
+            <li>Sketch
+                <div class="preview">
+                    <img src="https://d33wubrfki0l68.cloudfront.net/61cd58ef3d711f18fdf92a6e0e0979d1e2ef9797/6f87e/sketchcloud-preview.d621cf6d.jpg"
+                        alt="">
+                </div>
+            </li>
+            <li>WeTransfer
+                <div class="preview">
+                    <video preload="none" muted="" loop="" autoplay="" playsinline="" webkit-playsinline="" width="100%">
+                        <source
+                            src="https://d33wubrfki0l68.cloudfront.net/d85a1ae110b4ef5a96ca79b1bee7dfceb8af9010/09bcb/wetransfer-preview.b8a127ad.webm"
+                            type="video/webm">
+                        <source
+                            src="https://d33wubrfki0l68.cloudfront.net/e059828993540fe3230992adb1bd0e9d7a7c7ab2/862ba/wetransfer-preview.3b6e83b8.mp4"
+                            type="video/mp4">
+                    </video>
+                </div>
+
+            </li>
+            <li>Coffee By <br>Benjamin
+                <div class="preview">
+                    <img src="https://d33wubrfki0l68.cloudfront.net/72645f18ba4b604b91901443b3a1b39b4652d612/fb2b3/coffeebybenjamin-preview-mobile.44adc52b.jpg"
+                        alt="">
+                </div>
+            </li>
+            <li>Beam
+                <div class="preview">
+                    <video preload="none" muted="" loop="" autoplay="" playsinline="playsinline"
+                        webkit-playsinline="webkit-playsinline">
+                        <source
+                            src="https://d33wubrfki0l68.cloudfront.net/43f6e0cf9cf02d58d8fe4f61ceadcf00cd36629d/f51d1/beam-preview.6e4549be.webm"
+                            type="video/webm">
+                        <source
+                            src="https://d33wubrfki0l68.cloudfront.net/0c0e07ddf6ff245825e2b6bf2e3a599d409ceffd/90693/beam-preview.940b40c4.mp4"
+                            type="video/mp4">
+                    </video>
+                </div>
+
+            </li>
+            <li>More </li>
+        </ul>
+    </main>
+    <footer>
+        <section>
+            <h2>Read More about us</h2>
+            <h2>About</h2>
+        </section>
+
+    </footer>
+
+    <script>
+        // Parallax effect pentru footer
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const rate = scrolled * -0.5;
+            
+            // Parallax pentru footer section
+            const footerSection = document.querySelector('footer section');
+            footerSection.style.transform = `translateY(${rate}px)`;
+            
+            // Afișează h2-urile când scroll-ezi spre footer
+            const footer = document.querySelector('footer');
+            const footerTop = footer.offsetTop;
+            const windowHeight = window.innerHeight;
+            
+            if (scrolled + windowHeight > footerTop + 200) {
+                const h2Elements = document.querySelectorAll('footer h2');
+                h2Elements.forEach((h2, index) => {
+                    setTimeout(() => {
+                        h2.classList.add('visible');
+                    }, index * 300);
+                });
+            }
+        });
+        
+        // Oprește animațiile video-urilor când nu sunt în hover
+        document.querySelectorAll('main li').forEach(li => {
+            const video = li.querySelector('video');
+            if (video) {
+                li.addEventListener('mouseenter', () => {
+                    video.currentTime = 0;
+                    video.play();
+                });
+                li.addEventListener('mouseleave', () => {
+                    video.pause();
+                });
+            }
+        });
+    </script>
+</body>
+</html>
